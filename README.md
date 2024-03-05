@@ -22,6 +22,8 @@ Siéntete libre de personalizar este playground según tus necesidades. Puedes a
 # Contribuciones
 ¡Contribuciones son bienvenidas! Si encuentras errores o tienes ideas para mejorar este playground, por favor abre un problema o envía una solicitud de extracción.
 
+Puedes ver el proyecto en vivo: https://playground-code.vercel.app
+
 ------------------------------------------------
 
 # HTML, CSS, and JS Playground with ReactJS, Vite, Tailwind, and Monaco Editor
@@ -46,3 +48,5 @@ Feel free to customize this playground according to your needs. You can add more
 
 # Contributions
 Contributions are welcome! If you find any bugs or have ideas to improve this playground, please open an issue or send a pull request.
+
+You can see the project live: https://playground-code.vercel.app
