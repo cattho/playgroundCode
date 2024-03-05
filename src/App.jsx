@@ -44,7 +44,7 @@ document.getElementById("greetings").innerHTML= saludo;`;
   return (
     <>
       <NavBar />
-      <div className='grid grid-cols-3 container-app h-screen w-full'>
+      <div className='grid grid-cols-3 container-app h-screen w-full select-none'>
         <div className='editor-container'>
           <Editor
             className='h-full w-full max-h-[300px]'
