@@ -16,15 +16,15 @@ function App() {
     <body>
     <!-- Tu código empieza aqui -->
     
-    <h1 class="red" id="greetings" ></h1>
+    <h1 class="tittle" id="greetings" ></h1>
     
     <!-- Tu código termina aqui -->
     </body>
     </html>`;
 
   // Estado inicial para el editor CSS
-  const initialStateCSS = `.red {
-      color: red
+  const initialStateCSS = `.tittle {
+      color: #fff
   }`;
 
   // Estado inicial para el editor JavaScript
@@ -44,15 +44,12 @@ document.getElementById("greetings").innerHTML= saludo;`;
   const iframeBase64 = `data:text/html;base64,${encodedCode}`;
 
   return (
-    <>
-      <NavBar />
-      <div className='grid grid-cols-3 container-app h-screen w-full select-none'>
-        <HtmlSection htmlCode={htmlCode} setHtmlCode={setHtmlCode} />
-        <CssSection cssCode={cssCode} setCssCode={setCssCode} />
-        <JavaScriptSection jsCode={jsCode} setJsCode={setJsCode} />
-        <IframeComponent userCode={iframeBase64} />
-      </div>
-    </>
+    <div className='container-app'>
+      <HtmlSection htmlCode={htmlCode} setHtmlCode={setHtmlCode} />
+      <CssSection cssCode={cssCode} setCssCode={setCssCode} />
+      <JavaScriptSection jsCode={jsCode} setJsCode={setJsCode} />
+      <IframeComponent userCode={iframeBase64} />
+    </div>
   );
 }
 
