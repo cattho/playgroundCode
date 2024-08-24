@@ -9,7 +9,7 @@ const NavBar = () => {
           alt='Icono'
           className='h-8 w-8 text-white'
         />
-        <p className="text-[#80F]">Code Playground</p>
+        <p className="text-[#fcfcfc]">Code Playground</p>
       </div>
     </nav>
   );

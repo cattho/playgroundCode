@@ -1,8 +1,10 @@
-import React, { useState } from "react";
 import "./styles/mainStyles.css";
-import IframeComponent from "./components/IframeComponent";
-import { Editor } from "@monaco-editor/react";
 import NavBar from "./components/NavBar";
+import { useState } from "react";
+import HtmlSection from "./components/htmlSection/HtmlSection";
+import CssSection from "./components/cssSection/CssSection";
+import JavaScriptSection from "./components/javaScriptSection/JavaScriptSection";
+import IframeComponent from "./components/iframeSection/IframeComponent";
 
 function App() {
   // Estado inicial para el editor HTML
@@ -26,13 +28,13 @@ function App() {
   }`;
 
   // Estado inicial para el editor JavaScript
-  const initialStateJs = `const saludo= "Hey Dev!!";
+  const initialStateJs = `const saludo= "Hola Dev!!";
 document.getElementById("greetings").innerHTML= saludo;`;
 
   // Estados iniciales de los editores
   const [htmlCode, setHtmlCode] = useState(initialStateHTML);
-  const [jsCode, setJsCode] = useState(initialStateJs);
   const [cssCode, setCssCode] = useState(initialStateCSS);
+  const [jsCode, setJsCode] = useState(initialStateJs);
 
   // Combinar códigos de los tres editores
   const combinedCode = `<html>${htmlCode}</html> <style>${cssCode}</style> <script>${jsCode}</script>`;
@@ -45,38 +47,9 @@ document.getElementById("greetings").innerHTML= saludo;`;
     <>
       <NavBar />
       <div className='grid grid-cols-3 container-app h-screen w-full select-none'>
-        <div className='editor-container'>
-          <Editor
-            className='h-full w-full max-h-[300px]'
-            theme='vs-dark'
-            id='html'
-            value={htmlCode}
-            onChange={(value) => setHtmlCode(value)}
-            defaultLanguage='html'
-          />
-        </div>
-
-        <div className='editor-container'>
-          <Editor
-            className='h-full w-full max-h-[300px]'
-            theme='vs-dark'
-            id='css'
-            value={cssCode}
-            onChange={(value) => setCssCode(value)}
-            defaultLanguage='css'
-          />
-        </div>
-
-        <div className='editor-container'>
-          <Editor
-            className='h-full w-full max-h-[300px]'
-            theme='vs-dark'
-            id='js'
-            value={jsCode}
-            onChange={(value) => setJsCode(value)}
-            defaultLanguage='javascript'
-          />
-        </div>
+        <HtmlSection htmlCode={htmlCode} setHtmlCode={setHtmlCode} />
+        <CssSection cssCode={cssCode} setCssCode={setCssCode} />
+        <JavaScriptSection jsCode={jsCode} setJsCode={setJsCode} />
         <IframeComponent userCode={iframeBase64} />
       </div>
     </>
